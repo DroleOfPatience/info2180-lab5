@@ -1,35 +1,23 @@
-/*function lookupData() {
-    fetch("world.php")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('result').textContent = data;
-    })
-    .catch(error => {
-        // Handle any errors
-        console.error("Error", error);
-        document.getElementById('result').textContent = 'Failed to fetch data.';
-    })
-}
-
-
-document.getElementById("lookup").addEventListener("click", lookupData);
-*/
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const search = document.getElementById("lookup");
 
-        search.addEventListener("click", function(){
 
-            fetch("http://localhost/info2180-lab5/world.php")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('result').textContent = data;
-            })
-            .catch(error => {
-                // Handle any errors
-                console.error("Error", error);
-                document.getElementById('result').textContent = 'Failed to fetch data.';
-            })
-        });
+    
+    search.addEventListener("click", function(){
+        var place = document.getElementById("country").value;
+        jax = new XMLHttpRequest();
+        jax.open('GET', `http://localhost/info2180-lab5/world.php?country=${place}`)
+        
+        jax.onload = function(){
+            if(jax.status==200){
+                console.log("place")
+                document.getElementById('result').innerHTML = this.responseText;
+            }else{
+                console.log("Error")
+                document.getElementById('result').innerHTML = 'Failed to fetch data.';
+            }
+        }
+        jax.send();
+        
+    });
 })
