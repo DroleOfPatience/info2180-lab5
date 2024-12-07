@@ -4,14 +4,26 @@ table {
     margin: 20px 0;
 }
 
+header {
+    padding: 5%;
+    text-align: center;
+    background-color: aqua;
+}
+
 th, td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
 }
 
+main {
+    padding: 5%;
+
+}
+
 th {
-    background-color: #f2f2f2;
+    background-color: #632424;
+    color: white;
 }
 
 tr:nth-child(even) {
@@ -19,5 +31,16 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ac3131;
+    color: rgb(222, 201, 201);
+}
+
+.controls{
+    color: aqua;
+    padding: 3%;
+    text-align: center;
+}
+
+.buttons:hover{
+    color: aquamarine;
 }

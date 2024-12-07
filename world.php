@@ -24,7 +24,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <tr>
   <td><?= $row['name']; ?></td>
   <td><?= $row['continent']; ?></td>
-  <td><?= $row['independence_year'] . ' is ruled by ' . $row['head_of_state']; ?></td>
+  <td><?= $row['independence_year'] ?></td>
   <td><?= $row['head_of_state']; ?></d>
 </tr>
 

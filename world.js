@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const search = document.getElementById("lookup");
-
+    const country = document.getElementById("lookup");
 
     
-    search.addEventListener("click", function(){
+    country.addEventListener("click", function(){
         var place = document.getElementById("country").value;
         jax = new XMLHttpRequest();
         jax.open('GET', `http://localhost/info2180-lab5/world.php?country=${place}`)
         
         jax.onload = function(){
             if(jax.status==200){
-                console.log("place")
+                console.log("Valid Country")
                 document.getElementById('result').innerHTML = this.responseText;
             }else{
                 console.log("Error")
@@ -20,4 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
         jax.send();
         
     });
+
 })
